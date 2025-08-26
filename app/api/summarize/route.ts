@@ -1,10 +1,14 @@
 import { NextResponse } from 'next/server';
 import OpenAI from 'openai';
 
-const openai = new OpenAI({
-  apiKey: "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", // 🔴 hardcoded
-  baseURL: "https://openrouter.ai/api/v1",
+// const openai = new OpenAI({
+//   apiKey: "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", // 🔴 hardcoded
+//   baseURL: "https://openrouter.ai/api/v1",
 
+// });
+
+const openai = new OpenAI({
+  apiKey: process.env.OPENAI_API_KEY
 });
 
 export async function POST(req: Request) {
